@@ -1,0 +1,58 @@
+{
+	"name": "@lesjoursfr/html-to-image",
+	"version": "1.0.0",
+	"description": "A library to generate images from HTML.",
+	"license": "MIT",
+	"repository": "lesjoursfr/html-to-image",
+	"homepage": "https://github.com/lesjoursfr/html-to-image#readme",
+	"bugs": {
+		"url": "https://github.com/lesjoursfr/html-to-image/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"engines": {
+		"node": "18.x || 20.x"
+	},
+	"keywords": [
+		"image",
+		"generator",
+		"html"
+	],
+	"main": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"files": [
+		"lib/**/*",
+		"src/**/*",
+		"templates/**/*"
+	],
+	"scripts": {
+		"freshlock": "rm -rf node_modules/ && rm .yarn/install-state.gz && rm yarn.lock && yarn",
+		"check-lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+		"check-format": "prettier --check .",
+		"check-tsc": "tsc --noEmit",
+		"lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
+		"format": "prettier --write .",
+		"build": "tsc && cp src/electron.js lib/electron.js",
+		"test": "mocha"
+	},
+	"dependencies": {
+		"electron": "^29.2.0",
+		"yargs": "^17.7.2"
+	},
+	"devDependencies": {
+		"@tsconfig/node18": "^18.2.4",
+		"@types/mocha": "^10.0.6",
+		"@types/node": "^20.12.7",
+		"@types/yargs": "^17.0.32",
+		"@typescript-eslint/eslint-plugin": "^7.6.0",
+		"@typescript-eslint/parser": "^7.6.0",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"mocha": "^10.4.0",
+		"prettier": "^3.2.5",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.4.4"
+	},
+	"packageManager": "yarn@4.1.1"
+}

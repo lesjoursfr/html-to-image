@@ -1,0 +1,12 @@
+{
+	"extends": "./node_modules/@tsconfig/node18/tsconfig.json",
+	"compilerOptions": {
+		/* Visit https://aka.ms/tsconfig.json to read more about this file */
+		"outDir": "lib",
+		"rootDir": "src",
+		"declaration": true,
+		"declarationDir": "lib"
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "**/*.spec.ts"]
+}
