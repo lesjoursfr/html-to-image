@@ -61,14 +61,20 @@ app.on("ready", function () {
       `Promise
 .resolve(document.querySelector("${escapedSelector}"))
 .then((element) => {
+  if (element === null) { return null; }
   let rect = element.getBoundingClientRect();
   window.scrollTo(0, rect.y);
-  return { x: rect.x, y: 0, width: rect.width, height: rect.height }
+  rect = element.getBoundingClientRect();
+  return { x: rect.x, y: rect.y, width: rect.width, height: rect.height }
 });`
     );
+    if (rect === null) {
+      return imageGenerationCallback(new Error(`Can't find an element that match the selector: ${escapedSelector}`));
+    }
 
     // Make sure we have integers
     rect.x = Math.round(rect.x);
+    rect.y = Math.round(rect.y);
     rect.width = Math.round(rect.width);
     rect.height = Math.round(rect.height);
 
