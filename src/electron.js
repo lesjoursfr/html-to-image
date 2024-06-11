@@ -1,4 +1,3 @@
-const { error } = require("console");
 const { app, BrowserWindow } = require("electron");
 const { writeFileSync } = require("fs");
 const { string: yargs } = require("yargs");
@@ -10,7 +9,7 @@ const { target, output, selector, outputImageType } = yargs(["target", "output",
 app.on("ready", function () {
   // Image Generation Callback
   let exiting = false;
-  function imageGenerationCallback(err, image, cropRect) {
+  function imageGenerationCallback(err, image, _cropRect) {
     // Shutdown Electron
     window.close();
     app.quit();
