@@ -35,11 +35,11 @@ htmlToImage
 
 #### Parameters
 
--   `target`:
-    The URL of the HTML page
--   `output`:
-    The image file path
--   `selector`:
-    The CSS selector of the content to capture
--   `outputType`:
-    The image type ("png" or "jpeg", default to "jpeg")
+- `target`:
+  The URL of the HTML page
+- `output`:
+  The image file path
+- `selector`:
+  The CSS selector of the content to capture
+- `outputType`:
+  The image type ("png" or "jpeg", default to "jpeg")
