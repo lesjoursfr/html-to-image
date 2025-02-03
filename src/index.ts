@@ -69,7 +69,7 @@ export class HtmlToImage {
   }
 
   async render(): Promise<OperationResult> {
-    // Render the PDF
+    // Render the Image
     const command = this.command();
     const { stdout } = await execp(command);
 

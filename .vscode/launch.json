@@ -33,6 +33,27 @@
 			],
 			"outputCapture": "std",
 			"skipFiles": ["<node_internals>/**/*.js"]
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Generate a PNG",
+			"runtimeExecutable": "${workspaceFolder}/node_modules/electron/cli.js",
+			"runtimeArgs": [
+				"--no-sandbox",
+				"--enable-logging",
+				"${workspaceFolder}/src/electron.js",
+				"--target",
+				"file://${workspaceFolder}/tests/article.html",
+				"--output",
+				"${workspaceFolder}/tests/article.png",
+				"--selector",
+				"blockquote",
+				"--output-image-type",
+				"png"
+			],
+			"outputCapture": "std",
+			"skipFiles": ["<node_internals>/**/*.js"]
 		}
 	]
 }
