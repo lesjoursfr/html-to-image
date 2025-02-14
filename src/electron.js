@@ -48,7 +48,6 @@ app.on("ready", function () {
   window.loadURL(target);
   window.webContents.on("did-finish-load", async function () {
     // Prevent Multiple Callback Calls
-    console.log("did-finish-load");
     if (exiting) {
       return;
     }
