@@ -1,9 +1,12 @@
 const { app, BrowserWindow } = require("electron");
 const { writeFileSync } = require("fs");
-const { string: yargs } = require("yargs");
+const yargs = require("yargs");
+const { hideBin } = require("yargs/helpers");
 
 // Arguments
-const { target, output, selector, outputImageType } = yargs(["target", "output", "selector", "output-image-type"]).argv;
+const { target, output, selector, outputImageType } = yargs(hideBin(process.argv))
+  .string(["target", "output", "selector", "output-image-type"])
+  .parse();
 
 // Wait until Electron is Ready
 app.on("ready", function () {
