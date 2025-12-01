@@ -84,14 +84,10 @@ export class HtmlToImage {
 
   private command(): string {
     if (this.options.xvfb) {
-      return `xvfb-run ${this.options.xvfbArgs || ""} node ${require.resolve(
-        "electron/cli.js"
-      )} --no-sandbox ${script} --target ${this.url.toString()} --output ${this.output} --selector ${this.selector} --output-image-type ${this.outputType}`;
+      return `xvfb-run ${this.options.xvfbArgs || ""} node ${require.resolve("electron/cli.js")} --no-sandbox ${script} --target ${this.url.toString()} --output ${this.output} --selector ${this.selector} --output-image-type ${this.outputType}`;
     }
 
-    return `node ${require.resolve(
-      "electron/cli.js"
-    )} --no-sandbox ${script} --target ${this.url.toString()} --output ${this.output} --selector ${this.selector} --output-image-type ${this.outputType}`;
+    return `node ${require.resolve("electron/cli.js")} --no-sandbox ${script} --target ${this.url.toString()} --output ${this.output} --selector ${this.selector} --output-image-type ${this.outputType}`;
   }
 
   async render(): Promise<OperationResult> {
