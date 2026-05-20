@@ -61,11 +61,11 @@ async function exitCodeSafeExec(command: string): Promise<string> {
 }
 
 export class HtmlToImage {
-  url: URL;
-  output: string;
-  selector: string;
-  outputType: HtmlToImageOutputType;
-  options: HtmlToImageOptions;
+  readonly url: URL;
+  readonly output: string;
+  readonly selector: string;
+  readonly outputType: HtmlToImageOutputType;
+  readonly options: HtmlToImageOptions;
 
   constructor(
     url: URL,
