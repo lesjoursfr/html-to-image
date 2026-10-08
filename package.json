@@ -1,6 +1,6 @@
 {
 	"name": "@lesjoursfr/html-to-image",
-	"version": "2.2.0",
+	"version": "2.2.1",
 	"description": "A library to generate images from HTML.",
 	"license": "MIT",
 	"repository": {
